@@ -51,9 +51,6 @@ const io = require("socket.io")(server, {
   },
 });
 
-const emailToSocketIdMap = new Map();
-const socketidToEmailMap = new Map();
-
 io.on("connection", (socket) => {
   socket.on("setup", (userData) => {
     socket.join(userData._id);
